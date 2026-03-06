@@ -2,6 +2,7 @@ package net.ghhwert.ominousencounters;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.ghhwert.ominousencounters.block.ModBlocks;
 import net.ghhwert.ominousencounters.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,5 +14,6 @@ public class OminousEncounters implements ModInitializer {
 	@Override
 	public void onInitialize() {
         ModItems.registerModItems();
+        ModBlocks.registerModBlocks();
 	}
 }

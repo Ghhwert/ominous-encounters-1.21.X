@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "ominousencounters:block/example_block"
+    }
+  }
+}
