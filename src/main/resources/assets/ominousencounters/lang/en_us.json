@@ -1,5 +1,6 @@
 {
   "item.ominousencounters.old_bell": "Old Bell",
   "item.ominousencounters.old_gift": "Old Gift",
-  "block.ominousencounters.example_block": "Example Block"
+  "block.ominousencounters.example_block": "Example Block",
+  "particle.ominousencounters.mist_particle": "Mist Particle"
 }
