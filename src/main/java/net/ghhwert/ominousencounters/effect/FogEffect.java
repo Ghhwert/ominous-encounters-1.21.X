@@ -21,7 +21,7 @@ public class FogEffect implements EffectScheduler.ScheduledEffect {
 
     @Override
     public void tick() {
-        if (ticksLeft % 3 == 0) {
+        if (ticksLeft % 20 == 0) {
             BellItem.fillWithFog(area, world);
         }
         ticksLeft--;

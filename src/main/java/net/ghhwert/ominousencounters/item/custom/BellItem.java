@@ -1,11 +1,11 @@
 package net.ghhwert.ominousencounters.item.custom;
 
+import net.ghhwert.ominousencounters.particle.ModParticles;
 import net.ghhwert.ominousencounters.util.EffectScheduler;
 import net.ghhwert.ominousencounters.effect.FogEffect;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
@@ -33,7 +33,7 @@ public class BellItem extends Item{
             List<BlockPos> area = getFogArea(fogCenter);
 
             final int tickPerSec = 20;
-            int duration = 15 * tickPerSec;
+            int duration = 25 * tickPerSec;
             EffectScheduler.addEffect(new FogEffect(serverWorld, area, duration));
         }
 
@@ -45,8 +45,8 @@ public class BellItem extends Item{
         //Gets all positions the Old Bell effects.
         List<BlockPos> positions = new ArrayList<>();
 
-        final int horizontalRadius = 15;
-        final int verticalRadius = 7;
+        final int horizontalRadius = 25;
+        final int verticalRadius = 10;
         for (int x = -horizontalRadius; x <= horizontalRadius; x++){
             for (int y = -verticalRadius; y <= verticalRadius; y++){
                 for (int z = -horizontalRadius; z <= horizontalRadius; z++){
@@ -64,8 +64,8 @@ public class BellItem extends Item{
         double offsetZ = (serverWorld.random.nextDouble() - 0.5) * 0.8;
 
         for (BlockPos pos : area) {
-            if (serverWorld.isAir(pos) && (serverWorld.random.nextFloat() > 0.8f)) {
-                serverWorld.spawnParticles(ParticleTypes.POOF,
+            if (serverWorld.isAir(pos) && (serverWorld.random.nextFloat() > 0.9f)) {
+                serverWorld.spawnParticles(ModParticles.MIST_PARTICLE,
                         pos.getX()+0.5F+offsetX,
                         pos.getY()+0.5F+offsetY,
                         pos.getZ()+0.5F+offsetZ,
